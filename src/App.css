@@ -1,9 +1,8 @@
 .footer-icon-btn {
-  @apply bg-custom-dark-gray px-2 py-2 rounded-xl text-center
+  @apply bg-custom-dark-gray px-2 py-2 rounded-xl text-center 
   
 }
 
 .footer-icon {
   @apply text-primary-foreground w-9 h-9
 }
-

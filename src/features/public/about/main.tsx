@@ -7,7 +7,7 @@ import "../../../index.css"
 export default function AboutMainComponent() {
 
     return (
-        <>
+        <div className="font-montserrat">
             <header>
                 <NavbarComponent />
             </header>
@@ -20,7 +20,7 @@ export default function AboutMainComponent() {
             <footer className="">
                 <FooterComponent />
             </footer>
-       </>
+       </div>
     )
     
 };

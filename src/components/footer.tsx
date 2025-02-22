@@ -14,13 +14,13 @@ export default function FooterComponent() {
 
     return (
 
-        <div className="bg-custom-footer-bg sm:flex sm:flex-row sm:justify-center sm:items-center flex justify-center items-center py-20">
+        <div className="bg-custom-footer-bg flex sm:flex-row justify-center items-center px-5 py-20">
             <div className="md:w-full md:max-w-full xl:w-[84vw] xl:max-w-[84vw] lg:w-full lg:px-10 w-full space-y-5 px-2">
                 <div className=""></div>
                 <Separator className="bg-[#413f3f] md:w-full md:max-w-full xl:w-[80vw] xl:max-w-[90vw] lg:px-10 w-full px-5" />
 
                 <div className="sm:flex sm:flex-row sm:justify-center sm:py-10 sm:w-full md:w-full md:max-w-full xl:w-[80vw] xl:max-w-[90vw] flex flex-col  justify-between ">
-                    <div className="sm:flex sm:flex-row sm:justify-between sm:items-center sm:gap-10 w-full flex flex-col justify-between items-start gap-10">
+                    <div className="sm:flex sm:flex-row sm:justify-between sm:items-center lg:flex lg:flex-row md:grid md:grid-cols-2 sm:gap-10 w-full flex flex-col justify-between items-start gap-10">
                         <div className="flex flex-col gap-y-3 sm:max-w-max">
                            
                             <Link to="/">
@@ -38,10 +38,10 @@ export default function FooterComponent() {
                                 </p>
                                 <button
                                     onClick={() => window.open('https://t.me/fraudwall_bot', '_blank')}
-                                    className="bg-custom-dark-gray px-12 py-3 text-primary-foreground rounded-xl"
+                                    className="bg-custom-dark-gray px-6 py-3 text-primary-foreground rounded-xl hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150"
                                 >
                                    <div className="flex flex-row gap-3 items-center justify-center ">
-                                        <span className="text-lg">Chat on Telegram</span>
+                                        <span className="sm:text-lg text-base">Chat on Telegram</span>
                                         <IconBrandTelegram size={24} className="w-9 h-9 rounded-xl " />
                                    </div>
 
@@ -54,33 +54,33 @@ export default function FooterComponent() {
                                 <img 
                                     alt="Association of Certified Fraud Examiners"
                                     src={acfe_logo}
-                                    className="object-fill sm:w-[17rem] w-[15rem] h-full"
+                                    className="object-fill sm:w-[20rem] w-[60vw] max-h-min h-full"
                                 />
                             </a>
                         </div>
 
-                        <div className="sm:flex sm:flex-col sm:gap-3 flex flex-col gap-3">
+                        <div className="flex sm:flex-col flex-col gap-3">
                             <b className="capitalize font-semibold text-custom-light-gray text-lg">
                                 Social Media
                             </b>
-                            <div className="sm:flex sm:flex-row sm:gap-x-2  sm:gap-y-3 sm:justify-center sm:items-center flex justify-start">
+                            <div className="flex sm:flex-row sm:gap-x-2  sm:gap-y-3 sm:justify-center sm:items-center md:max-w-max justify-start gap-x-2">
                                 <div className="w-full flex flex-row justify-center items-center">
-                                    <button className="footer-icon-btn">
+                                    <button className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150">
                                         <IconBrandFacebook size={24} className="footer-icon"/>
                                     </button>
                                 </div>
                                 <div className="">
-                                    <button className="footer-icon-btn">
+                                    <button className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150">
                                         <IconBrandX size={24} className="footer-icon" />
                                     </button>
                                 </div>
                                 <div className="w-full flex flex-row justify-center items-center">
-                                    <button className="footer-icon-btn">
+                                    <button className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150 ">
                                         <IconBrandInstagram className="footer-icon" />
                                     </button>
                                 </div>
                                 <div className="w-full flex flex-row justify-center items-center">
-                                    <button className="footer-icon-btn">
+                                    <button className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150">
                                         <IconBrandLinkedin size={24} className="footer-icon"/>
                                     </button>
                                 </div>

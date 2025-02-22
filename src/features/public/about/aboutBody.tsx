@@ -12,7 +12,7 @@ export default function AboutComponent() {
 
     return (
 
-        <div className="bg-custom-primary-400 sm:w-full sm:flex sm:justify-center sm:items-center w-full justify-center items-center">
+        <div className="bg-custom-primary-400 text-primary-foreground sm:w-full sm:flex sm:justify-center sm:items-center w-full justify-center items-center">
             <div className="sm:w-[80vw] lg:w-full lg:px-10 xl:w-[80vw] md:w-full w-full px-5 py-10 space-y-10">
                 <div className="">
                     <h2 className="font-medium text-[24px]">About Fraudwall</h2>

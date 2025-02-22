@@ -112,6 +112,10 @@
 }
 
 
+body {
+  font-family: "Montserrat", serif;
+}
+
 
 @layer base {
   * {
@@ -121,6 +125,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 
 
 
@@ -142,7 +147,6 @@
 }
 
 
-
 .custom-phone-input .PhoneInputCountrySelect {
   position: absolute;
   top: 0;
@@ -162,5 +166,5 @@
   background: transparent !important;
   border: 1px solid white !important;
   caret-color: auto;
-
 }
+

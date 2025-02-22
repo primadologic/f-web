@@ -60,6 +60,7 @@ export default {
 
         	custom: {
 				"dark-gray": "#2f2f32",
+				"dark-gray-active": "#535359",
 				"footer-bg": "#19191c",
 				"light-gray": "#acacaf",
 				"periwinkle": "#ededf0",
@@ -88,6 +89,13 @@ export default {
   				max: '1024px'
   			}
 		},
+
+
+		fontFamily: {
+			montserrat: ['Montserrat', 'sans-serif'],
+		},
+
+		
       
   	}
   },
