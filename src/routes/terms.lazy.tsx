@@ -1,9 +1,7 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
+import TermsMainComponent from '../features/public/terms/main'
 
 export const Route = createLazyFileRoute('/terms')({
-  component: TermsRoute,
+  component: TermsMainComponent,
 })
 
-function TermsRoute() {
-  return <div className="text-2xl font-medium">Hello "/terms"!</div>
-}
