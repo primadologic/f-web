@@ -42,16 +42,16 @@ export default function NavbarComponent() {
                         <Link to="/" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md `}>
                             <li className="">Home</li> 
                         </Link>
-                        <Link to="/about" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/about" className={` focus:text-custom-primary-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
                             <li className="">About us</li>
                         </Link>
-                        <button  className="text-lg font-medium px-2 py-2 focus:text-cos-brown-500  hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md">
+                        <button  className="text-lg font-medium px-2 py-2 focus:text-custom-primary-500   hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li>Notify me</li>
                         </button>
-                        <Link to="/about" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/faqs" className={` focus:text-custom-primary-500  text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
                             <li className="">FAQs</li>
                         </Link>
-                        <Link to="/about" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/contact" className={` focus:text-custom-primary-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
                             <li className="">Contact us</li>
                         </Link>
                     </ul>
@@ -93,16 +93,16 @@ export default function NavbarComponent() {
                         <Link to="/" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md `}>
                             <li className="">Home</li> 
                         </Link>
-                        <Link to="/about" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/about" className={` focus:text-custom-primary-500  text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
                             <li className="">About us</li>
                         </Link>
-                        <button  className="text-lg font-medium px-2 py-2 focus:text-cos-brown-500  hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md">
+                        <button  className="text-lg font-medium px-2 py-2 focus:text-custom-primary-500   hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li>Notify me</li>
                         </button>
-                        <Link to="/about" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/faqs" className={` focus:text-custom-primary-500  text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
                             <li className="">FAQs</li>
                         </Link>
-                        <Link to="/about" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/contact" className={` focus:text-custom-primary-500  text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
                             <li className="">Contact us</li>
                         </Link>
                     </ul>

@@ -1,9 +1,7 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
+import FaqsMainComponent from '../features/public/faqs/main'
 
 export const Route = createLazyFileRoute('/faqs')({
-  component: FaqsRoute,
+  component: FaqsMainComponent,
 })
 
-function FaqsRoute() {
-  return <div className="text-2xl font-medium">Hello "/faqs"!</div>
-}

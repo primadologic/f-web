@@ -57,26 +57,23 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-
-        	custom: {
-				"dark-gray": "#2f2f32",
-				"dark-gray-active": "#535359",
-				"footer-bg": "#19191c",
-				"light-gray": "#acacaf",
-				"periwinkle": "#ededf0",
-				'active-gray': '#E0E0E0',
-				'primary-500': '#A55313',
-				'primary-400': '#B05E1D',
-				'shadow-image': '2px 10px 4px 0px #00000040',
-				'info-bg': '#0973dc',
-				'success-bg': '#34A853',
-				'error-bg': '#BC1F1F',
-        	},
+  			custom: {
+  				'dark-gray': '#2f2f32',
+  				'dark-gray-active': '#535359',
+  				'footer-bg': '#19191c',
+  				'light-gray': '#acacaf',
+  				'periwinkle': '#ededf0',
+  				'active-gray': '#E0E0E0',
+  				'primary-500': '#A55313',
+  				'primary-400': '#B05E1D',
+  				'shadow-image': '2px 10px 4px 0px #00000040',
+  				'info-bg': '#0973dc',
+  				'success-bg': '#34A853',
+  				'error-bg': '#BC1F1F'
+  			}
   		},
-
-      
-		screens: {
-			'md-736': {
+  		screens: {
+  			'md-736': {
   				max: '736px'
   			},
   			'md-767': {
@@ -88,15 +85,35 @@ export default {
   			'lg-1024': {
   				max: '1024px'
   			}
-		},
-
-
-		fontFamily: {
-			montserrat: ['Montserrat', 'sans-serif'],
-		},
-
-		
-      
+  		},
+  		fontFamily: {
+  			montserrat: [
+  				'Montserrat',
+  				'sans-serif'
+  			]
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
   	}
   },
   plugins: [
