@@ -1,9 +1,7 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
+import ContactMainComponent from '../features/public/contact/main'
 
 export const Route = createLazyFileRoute('/contact')({
-  component: ContactRoute,
+  component: ContactMainComponent,
 })
 
-function ContactRoute() {
-  return <div className="text-2xl font-medium">Hello "/contact"!</div>
-}
