@@ -1,21 +1,21 @@
 import FooterComponent from "../../../components/footer";
 import NavbarComponent from "../../../components/navbar";
-import FaqsBody from "./faqsBody";
-import FaqsHeader from "./faqsHeader";
+import TermsBody from "./termsBody";
+import TermsHeader from "./termsHeader";
 
 
 
-export default function FaqsMainComponent() {
+export default function TermsMainComponent() {
 
     return (
-        <div className="font-manrope">
+        <div className="font-quicksand">
             <header>
                 <NavbarComponent />
             </header>
 
                 <main>
-                   <FaqsHeader />
-                    <FaqsBody />
+                    <TermsHeader />
+                   <TermsBody />
                 </main>
 
             <footer className="">

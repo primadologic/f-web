@@ -39,19 +39,19 @@ export default function NavbarComponent() {
                
                 <div className="text-black text-xl hidden sm:hidden  md-767:hidden lg:block">
                     <ul className="flex gap-10 items-center xl:gap-10 sm:gap-5">
-                        <Link to="/" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md `}>
+                        <Link to="/" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">Home</li> 
                         </Link>
-                        <Link to="/about" className={` focus:text-custom-primary-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/about" activeProps={{ className: " font-bold text-lg text-custom-primary-500" }} className="focus:text-custom-primary-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">About us</li>
                         </Link>
-                        <button  className="text-lg font-medium px-2 py-2 focus:text-custom-primary-500   hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md">
+                        <button  className="text-lg font-semibold px-2 py-2 focus:text-custom-primary-500   hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li>Notify me</li>
                         </button>
-                        <Link to="/faqs" className={` focus:text-custom-primary-500  text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/faqs" activeProps={{ className: " font-bold text-custom-primary-500" }} className=" focus:text-custom-primary-500  text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">FAQs</li>
                         </Link>
-                        <Link to="/contact" className={` focus:text-custom-primary-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/contact" activeProps={{ className: " font-bold text-custom-primary-500" }} className=" focus:text-custom-primary-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">Contact us</li>
                         </Link>
                     </ul>
@@ -83,26 +83,26 @@ export default function NavbarComponent() {
                                     />
                              </div>      
                             </Link>
-                            <button className="bg-gray-200  rounded-md">
+                            <button onClick={toggleSidebar} className="bg-gray-200  rounded-md">
                                 <XIcon size={30} color={"#A55313"} strokeWidth={3}  />
                             </button>
                         </div>
                     )}
                   
                     <ul className="flex flex-col gap-3 justify-start text-start items-start xl:gap-10 sm:gap-5 mt-10">
-                        <Link to="/" className={` focus:text-cos-brown-500 text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md `}>
+                        <Link to="/" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">Home</li> 
                         </Link>
-                        <Link to="/about" className={` focus:text-custom-primary-500  text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/about" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">About us</li>
                         </Link>
-                        <button  className="text-lg font-medium px-2 py-2 focus:text-custom-primary-500   hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md">
+                        <button  className="text-lg font-medium px-2 py-2 focus:text-custom-primary-500   hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li>Notify me</li>
                         </button>
-                        <Link to="/faqs" className={` focus:text-custom-primary-500  text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/faqs" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">FAQs</li>
                         </Link>
-                        <Link to="/contact" className={` focus:text-custom-primary-500  text-lg font-medium px-2 py-2 hover:bg-active-gray hover:bg-opacity-50 hover:rounded-md`}>
+                        <Link to="/contact" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">Contact us</li>
                         </Link>
                     </ul>
