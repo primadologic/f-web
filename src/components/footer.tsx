@@ -38,11 +38,11 @@ export default function FooterComponent() {
                                 </p>
                                 <button
                                     onClick={() => window.open('https://t.me/fraudwall_bot', '_blank')}
-                                    className="bg-custom-dark-gray px-6 py-3 text-primary-foreground rounded-xl hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150"
+                                    className="bg-custom-dark-gray sm:px-6 sm:py-3 text-primary-foreground rounded-xl px-3 py-3 hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150"
                                 >
                                    <div className="flex flex-row gap-3 items-center justify-center ">
                                         <span className="sm:text-lg text-base">Chat on Telegram</span>
-                                        <IconBrandTelegram size={24} className="w-9 h-9 rounded-xl " />
+                                        <IconBrandTelegram size={24} className="sm:w-9 sm:h-9 w-5 h-5 rounded-xl " />
                                    </div>
 
                                 </button>
@@ -65,22 +65,22 @@ export default function FooterComponent() {
                             </b>
                             <div className="flex sm:flex-row sm:gap-x-2  sm:gap-y-3 sm:justify-center sm:items-center md:max-w-max justify-start gap-x-2">
                                 <div className="w-full flex flex-row justify-center items-center">
-                                    <button className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150">
+                                    <button onClick={() => window.open('https://www.facebook.com/fraudwallai', '_blank') } className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150">
                                         <IconBrandFacebook size={24} className="footer-icon"/>
                                     </button>
                                 </div>
                                 <div className="">
-                                    <button className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150">
+                                    <button onClick={() => window.open('https://x.com/fraudwallgh', '_blank')}  className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150">
                                         <IconBrandX size={24} className="footer-icon" />
                                     </button>
                                 </div>
                                 <div className="w-full flex flex-row justify-center items-center">
-                                    <button className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150 ">
+                                    <button onClick={() => window.open('https://instagram.com/fraudwallgh', '_blank')} className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150 ">
                                         <IconBrandInstagram className="footer-icon" />
                                     </button>
                                 </div>
                                 <div className="w-full flex flex-row justify-center items-center">
-                                    <button className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150">
+                                    <button onClick={() => window.open('https://linkedin.com/company/fraudwall-ai', '_blank')} className="footer-icon-btn hover:bg-custom-dark-gray-active transition-colors duration-300 hover:delay-150">
                                         <IconBrandLinkedin size={24} className="footer-icon"/>
                                     </button>
                                 </div>

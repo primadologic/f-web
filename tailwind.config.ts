@@ -87,9 +87,9 @@ export default {
   			}
   		},
   		fontFamily: {
-  			montserrat: [
-  				'Montserrat',
-  				'sans-serif'
+			manrope: [
+  				'Manrope',
+  				'serif'
   			]
   		},
   		keyframes: {

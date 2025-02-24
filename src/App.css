@@ -4,5 +4,5 @@
 }
 
 .footer-icon {
-  @apply text-primary-foreground w-9 h-9
+  @apply text-primary-foreground sm:w-9 sm:h-9 w-5 h-5
 }

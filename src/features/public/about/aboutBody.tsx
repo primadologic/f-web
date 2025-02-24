@@ -16,7 +16,7 @@ export default function AboutComponent() {
             <div className="sm:w-[50vw] w-full px-5 py-10 space-y-10">
                 <div className="">
                     <h2 className="font-semibold text-[24px]">About Fraudwall</h2>
-                    <p className="sm:text-justify sm:text-base text-sm text-justify">
+                    <p className="sm:text-justify sm:text-base font-medium text-sm text-justify">
                         At Fraudwall, our mission is to make the internet a safer place for everyone. In an age 
                         where online interactions and transactions have become an integral part of our daily lives, 
                         the risk of encountering fraudulent activities has increased significantly. Fraudwall was 
