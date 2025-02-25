@@ -7,7 +7,7 @@ import "../../../index.css"
 export default function AboutMainComponent() {
 
     return (
-        <div className="font-manrope">
+        <div className="font-space">
             <header>
                 <NavbarComponent />
             </header>

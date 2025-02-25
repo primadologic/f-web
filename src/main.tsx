@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import "./index.css"
 import "./App.css"
-
+import 'react-phone-number-input/style.css'
 
 
 // Import the generated route tree

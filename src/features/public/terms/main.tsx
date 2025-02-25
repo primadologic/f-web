@@ -8,7 +8,7 @@ import TermsHeader from "./termsHeader";
 export default function TermsMainComponent() {
 
     return (
-        <div className="font-quicksand">
+        <div className="font-space">
             <header>
                 <NavbarComponent />
             </header>
