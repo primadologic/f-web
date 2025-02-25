@@ -73,22 +73,59 @@ export default {
   			}
   		},
   		screens: {
-  			'md-736': {
-  				max: '736px'
-  			},
-  			'md-767': {
-  				max: '767px'
-  			},
-  			'md-912': {
-  				max: '912px'
-  			},
-  			'lg-1024': {
-  				max: '1024px'
-  			}
-  		},
+			'sm-430': {
+				max: '432px'
+			},
+			'sm-425': {
+				max: '428px'
+			},
+			'sm-344': {
+				max: '345px'
+			},
+			'sm-320': {
+				max: '321px'
+			},
+			'sm-390': {
+				max: '392px'
+			},
+			'sm-375': {
+				max: '379px'
+			},
+			'md-768': {
+				max: '770px'
+			},
+			'md-762': {
+				max: '762px'
+			},
+			'md-820': {
+				max: '823px'
+			},
+			'md-853': {
+				max: '854px'
+			},
+			'md-540': {
+				max: '541px'
+			},
+		  'md-600': {max: '602px'},
+			'md-667': {
+				max: '669px'
+			},
+			'md-736': {
+				max: '736px'
+			},
+			'md-767': {
+				max: '767px'
+			},
+			'md-912': {
+				max: '912px'
+			},
+			'lg-1024': {
+				max: '1024px'
+			}
+		},
   		fontFamily: {
-			manrope: [
-  				'Manrope',
+			space: [
+  				'Space Grotesk',
   				'serif'
   			]
   		},

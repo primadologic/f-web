@@ -113,7 +113,8 @@
 
 
 body {
-  font-family: "Manrope", serif;
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
 }
 
 

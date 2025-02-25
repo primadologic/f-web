@@ -8,13 +8,13 @@ import FaqsHeader from "./faqsHeader";
 export default function FaqsMainComponent() {
 
     return (
-        <div className="font-manrope">
+        <div className="font-space">
             <header>
                 <NavbarComponent />
             </header>
 
                 <main>
-                   <FaqsHeader />
+                    <FaqsHeader />
                     <FaqsBody />
                 </main>
 
