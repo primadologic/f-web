@@ -3,21 +3,15 @@
 import { useForm } from 'react-hook-form'
 import PhoneInputWithCountry from 'react-phone-number-input/react-hook-form'
 import { CheckNumberType } from '../../common/home.types'
-import {
-    AlertDialog,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-  } from "../../components/ui/alert-dialog"
+
 // images
 import ntoboa from "/trusted/Ntoboa-logo.png"
 import health from "/trusted/omini_health_logo_high_res.png"
 import stream from "/trusted/omini_stream_360.png"
 import tickets from "/trusted/omini_tickets.png"
-import GetOTPForm from '../../components/dialogs/getOTPForm'
+
 import { Link } from '@tanstack/react-router'
+import GetOTPAlertDialog from '../../components/dialogs/getOTPAlertDialog'
 
 
 
@@ -74,28 +68,9 @@ export default function HomeComponent() {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full sm:w-full md-736:w-[80%]">
-                            <AlertDialog>
-                                <AlertDialogTrigger 
-                                    className="border-[#eff4f8] border-2 bg-custom-periwinkle sm:text-lg text-lg font-semibold text-zinc-900 w-full px-5 py-3 rounded-md hover:font-semibold hover:transition-all hover:bg-[#dbe0e3] hover:delay-150 hover:ease-in-out hover:duration-150 focus:bg-[#e2eaf1] focus:text-zinc-800 "
-                                >
-                                    Report a number
-                                </AlertDialogTrigger>
-                                <AlertDialogContent>
-                                    <AlertDialogHeader>
-                                        <AlertDialogTitle className="font-semibold text-base">
-                                            Get OTP Code
-                                        </AlertDialogTitle>
-                                        <AlertDialogDescription className="text-sm font-semibold text-start text-gray-600">
-                                            Verify your phone number to report a fraudulent number
-                                        </AlertDialogDescription>
-                                    </AlertDialogHeader>
-                                    <div className="">
-                                        <GetOTPForm />
-                                    </div>
-                                </AlertDialogContent>
-                            </AlertDialog>
-                        </div>
+
+                        <GetOTPAlertDialog />
+                       
                     </form>
                 </div>
 
