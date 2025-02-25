@@ -10,7 +10,7 @@ import "../../../index.css"
 export default function ContactMainComponent() {
 
     return (
-        <div className="font-manrope">
+        <div className="font-space">
             <header>
                 <NavbarComponent />
             </header>
