@@ -58,7 +58,7 @@ export default function GetOTPAlertDialog() {
             <div className="">
                <AlertDialog  open={isOpen} onOpenChange={setOpen}>
                    <AlertDialogTrigger 
-                       className="border-[#eff4f8] w-full border-2 bg-custom-periwinkle sm:text-lg text-lg font-semibold text-zinc-900  px-5 py-3 rounded-md hover:font-semibold hover:transition-all hover:bg-[#dbe0e3] hover:delay-150 hover:ease-in-out hover:duration-150 focus:bg-[#e2eaf1] focus:text-zinc-800 "
+                       className="border-[#eff4f8] w-full border-2 bg-custom-periwinkle sm:text-lg text-lg font-semibold text-zinc-900  px-5 py-3 rounded-md hover:transition-all hover:bg-[#dbe0e3] hover:delay-150 hover:ease-in-out hover:duration-150 focus:bg-[#e2eaf1] focus:text-zinc-800 "
                    >
                        Report a number
                    </AlertDialogTrigger>

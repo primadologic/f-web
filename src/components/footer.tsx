@@ -32,6 +32,7 @@ export default function FooterComponent() {
                                         src={logo}
                                         alt='logo'
                                         className='object-fill sm:w-[10rem] w-[9rem]'
+                                        loading="lazy"
                                     />
                                 </div>      
                             </Link>
@@ -58,6 +59,7 @@ export default function FooterComponent() {
                                     alt="Association of Certified Fraud Examiners"
                                     src={acfe_logo}
                                     className="object-fill sm:w-[20rem] w-[60vw] max-h-min h-full"
+                                    loading="lazy"
                                 />
                             </a>
                         </div>

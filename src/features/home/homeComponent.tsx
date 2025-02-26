@@ -18,7 +18,7 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "../../components/ui/dialog" 
-import { IconBrandFacebook, IconBrandInstagram, IconPhone, IconBrandWhatsapp, IconBrandX, IconMessage } from '@tabler/icons-react';
+import { platforms, platformsWarning } from '../../common/platforms.type'
 
 // images
 import ntoboa from "/trusted/Ntoboa-logo.png"
@@ -164,22 +164,7 @@ export default function HomeComponent() {
     };
 
 
-    const platforms: { [key: string]: JSX.Element } = {
-        whatsapp:  <IconBrandWhatsapp className="text-white w-5 h-5"/>,
-        facebook: <IconBrandFacebook className="text-white w-5 h-5"/>,
-        sms:  <IconMessage className="text-white w-5 h-5"/>,
-        phone_call:  <IconPhone className="text-white w-5 h-5"/>,
-        instagram:  <IconBrandInstagram className="text-white w-5 h-5"/>,
-        twitter:  <IconBrandX className="text-white w-5 h-5"/>
-    }
-    const platformsWarning: { [key: string]: JSX.Element } = {
-        whatsapp:  <IconBrandWhatsapp className="text-black w-5 h-5"/>,
-        facebook: <IconBrandFacebook className="text-black w-5 h-5"/>,
-        sms:  <IconMessage className="text-black w-5 h-5"/>,
-        phone_call:  <IconPhone className="text-white w-5 h-5"/>,
-        instagram:  <IconBrandInstagram className="text-black w-5 h-5"/>,
-        twitter:  <IconBrandX className="text-black w-5 h-5"/>
-    }
+
     
 
     return (
@@ -248,8 +233,8 @@ export default function HomeComponent() {
                     </form>
                 </div>
 
-                <p className='text-center text-sm text-white font-medium mt-6 sm-430:px-6'>Using FraudWall is subject to {'  '}
-                    <Link to="/terms" target='_blank'  className='underline font-medium py-2 px-2'>the terms of use</Link>
+                <p className='text-center text-sm text-white font-medium mt-2 sm-430:px-6'>Using FraudWall is subject to {'  '}
+                    <Link to="/terms" target='_blank'  className='underline font-medium py-3 px-2'>the terms of use</Link>
                 </p>
 
             </section>
@@ -271,6 +256,7 @@ export default function HomeComponent() {
                                 src={health}
                                 alt="Fraudwall Logo"
                                 className="object-cover sm:w-[8rem] w-[8rem]"
+                                loading="lazy"
                             />
                         </div>    
                         <div className="">
@@ -278,6 +264,7 @@ export default function HomeComponent() {
                                     src={stream}
                                     alt="Fraudwall Logo"
                                     className="object-cover sm:w-[8rem] w-[8rem]"
+                                    loading="lazy"
                                 /> 
                         </div>    
                         <div className="">
@@ -285,6 +272,7 @@ export default function HomeComponent() {
                                 src={tickets}
                                 alt="Fraudwall Logo"
                                 className="object-cover sm:w-[8rem] w-[8rem]"
+                                loading="lazy"
                             />
                         </div>    
                     </div>
@@ -305,6 +293,7 @@ export default function HomeComponent() {
                                             src={people_celebrate}
                                             alt='celebrate'
                                             className='object-fill sm:w-[10rem] w-[9rem]'
+                                            loading="lazy"
                                         />
                                     </div>
                                     <DialogHeader>
@@ -335,6 +324,7 @@ export default function HomeComponent() {
                                             src={alert_fraud}
                                             alt="Fraud alert"
                                             className='object-fill sm:w-[10rem] w-[9rem]'
+                                            loading="lazy"
                                         />
                                     </div>
                                     <DialogHeader className="">
@@ -378,6 +368,7 @@ export default function HomeComponent() {
                                             src={woman_screaming}
                                             alt='Woman screaming illustration'
                                             className="object-fill sm:w-[10rem] w-[9rem]"
+                                            loading="lazy"
                                         />
                                         <DialogHeader className="">
                                             <DialogTitle className='text-black text-center text-2xl font-semibold'>Stay Alert</DialogTitle>

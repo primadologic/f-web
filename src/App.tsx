@@ -19,7 +19,7 @@ function App() {
            duration={3500} 
            toastOptions={{
              style: {fontSize: '14px'}
-           }}
+        }}
       />
       <HomeMainComponent />
     </div>

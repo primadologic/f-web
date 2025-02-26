@@ -33,6 +33,7 @@ export default function NavbarComponent() {
                              src={logo}
                              alt='logo'
                              className='object-fill sm:w-[10rem] w-[9rem]'
+                             loading="lazy"
                         />
                     </div>      
                 </Link>
@@ -80,6 +81,7 @@ export default function NavbarComponent() {
                                          src={logo}
                                          alt='logo'
                                          className='object-fill sm:w-[10rem] w-[9rem]'
+                                         loading="lazy"
                                     />
                              </div>      
                             </Link>
