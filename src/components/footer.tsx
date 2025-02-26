@@ -7,6 +7,7 @@ import { Link } from "@tanstack/react-router"
 // Images
 import acfe_logo from "/assets/acfe.png"
 import logo from "/assets/logo_white_wall.png"
+import StatisticsComponent from "./statistics"
 
 
 export default function FooterComponent() {
@@ -14,9 +15,11 @@ export default function FooterComponent() {
 
     return (
 
-        <div className="bg-custom-footer-bg flex sm:flex-row justify-center items-center px-5 py-20">
+        <div className="bg-custom-footer-bg flex sm:flex-row justify-center items-center px-5 py-10">
             <div className="md:w-full md:max-w-full xl:w-[84vw] xl:max-w-[84vw] lg:w-full lg:px-10 w-full space-y-5 px-2">
-                <div className=""></div>
+                <div className="">
+                    <StatisticsComponent />
+                </div>
                 <Separator className="bg-[#413f3f] md:w-full md:max-w-full xl:w-[80vw] xl:max-w-[90vw] lg:px-10 w-full px-5" />
 
                 <div className="sm:flex sm:flex-row sm:justify-center sm:py-10 sm:w-full md:w-full md:max-w-full xl:w-[80vw] xl:max-w-[90vw] flex flex-col  justify-between ">
