@@ -8,8 +8,8 @@ import { useVerifyNumCloseStore } from "./state"
 import Cookies from "js-cookie"
 import { toast } from "sonner"
 import { useNavigate } from "@tanstack/react-router"
-import { VerifyNumberType } from "../common/home.types"
-import { API_BASE_URL, API_KEY } from "../lib/env_vars"
+import { VerifyNumberType } from "@/common/home.types"
+import { API_BASE_URL, API_KEY } from "@/lib/env_vars"
 
 
 

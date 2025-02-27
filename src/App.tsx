@@ -1,9 +1,5 @@
-
-
-
-import HomeMainComponent from './features/home/main'
-
 import { Toaster } from 'sonner';
+import HomeMainComponent from '@/features/home/homeComponent';
 
 
 function App() {

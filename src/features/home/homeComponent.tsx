@@ -2,10 +2,7 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import PhoneInputWithCountry from 'react-phone-number-input/react-hook-form'
-import { CheckNumberType } from '../../common/home.types'
-import { API_KEY, API_BASE_URL } from '../../lib/env_vars'
-import { useGetOTPCloseStore } from '../../hooks/state'
-import GetOTPAlertDialog from '../../components/dialogs/getOTPAlertDialog'
+import { CheckNumberType } from '@/common/home.types'
 import { useMutation } from '@tanstack/react-query'
 import { Link, useNavigate } from '@tanstack/react-router'
 import axios from 'axios'
@@ -17,8 +14,8 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-  } from "../../components/ui/dialog" 
-import { platforms, platformsWarning } from '../../common/platforms.type'
+  } from "@/components/ui/dialog" 
+import { platforms, platformsWarning } from '@/common/platforms.type'
 
 // images
 import ntoboa from "/trusted/Ntoboa-logo.png"
@@ -29,9 +26,12 @@ import { toast } from 'sonner'
 import people_celebrate from "/assets/people-celebrate.png"
 import woman_screaming from "/assets/woman-screaming.png"
 import alert_fraud from "/assets/alert-fraud.png"
-import Loader from '../../components/loader'
+import Loader from '@/components/loader'
 import { ErrorMessage } from '@hookform/error-message'
-import VerifyNumbyOTPOCodeDialog from '../../components/dialogs/verifyNumberAlertDialogbyOTP'
+import VerifyNumbyOTPOCodeDialog from '@/components/dialogs/verifyNumberAlertDialogbyOTP'
+import { useGetOTPCloseStore } from '@/hooks/state'
+import { API_BASE_URL, API_KEY } from '@/lib/env_vars'
+import GetOTPAlertDialog from '@/components/dialogs/getOTPAlertDialog'
 
 
 

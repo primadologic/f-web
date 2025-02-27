@@ -1,5 +1,6 @@
+import HomeMainComponent from '@/features/home/main'
 import { createFileRoute } from '@tanstack/react-router'
-import HomeMainComponent from '../features/home/main'
+
 
 
 
