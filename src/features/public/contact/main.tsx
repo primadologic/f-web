@@ -1,8 +1,10 @@
-import FooterComponent from "../../../components/footer";
-import NavbarComponent from "../../../components/navbar";
+
+
 import ContactForm from "./contactForm";
 import ContactHeader from "./contactHeader";
-import "../../../index.css"
+import '@/index.css'
+import FooterComponent from "@/components/footer";
+import NavbarComponent from "@/components/navbar";
 
 
 

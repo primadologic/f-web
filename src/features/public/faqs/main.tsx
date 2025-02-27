@@ -1,7 +1,8 @@
-import FooterComponent from "../../../components/footer";
-import NavbarComponent from "../../../components/navbar";
+
+import FooterComponent from "@/components/footer";
 import FaqsBody from "./faqsBody";
 import FaqsHeader from "./faqsHeader";
+import NavbarComponent from "@/components/navbar";
 
 
 

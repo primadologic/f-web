@@ -1,7 +1,8 @@
-import FooterComponent from "../../components/footer";
-import NavbarComponent from "../../components/navbar";
-import ReportHeader from "./header";
+
+import NavbarComponent from "@/components/navbar";
 import ReportComponent from "./reportComponent";
+import FooterComponent from "@/components/footer";
+import ReportHeader from "./header";
 
 
 

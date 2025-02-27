@@ -3,11 +3,10 @@ import { Controller, useForm } from "react-hook-form";
 import PhoneInputWithCountry from 'react-phone-number-input/react-hook-form'
 import { useState } from "react";
 import Cookies from "js-cookie";
-import { API_BASE_URL, API_KEY } from "../../lib/env_vars";
+import { API_BASE_URL, API_KEY } from "@/lib/env_vars";
 import axios from "axios";
 import { toast } from "sonner";
 import { useNavigate } from "@tanstack/react-router";
-import { encrypt } from "../../lib/encryption";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useDropzone } from 'react-dropzone';
 import {
@@ -16,11 +15,12 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-  } from "../../components/ui/select"
-import { platforms } from "../../common/platforms.type";
+  } from "@/components/ui/select"
+import { platforms } from "@/common/platforms.type";
 import { X } from "lucide-react";
-import Loader from "../../components/loader";
-import { PlatformIDType, ReportFormType } from "../../common/report.type";
+import Loader from "@/components/loader";
+import { PlatformIDType, ReportFormType } from "@/common/report.type";
+import { encrypt } from "@/lib/encryption";
 
 
 

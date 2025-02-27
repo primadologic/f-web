@@ -6,9 +6,10 @@ import { useForm } from "react-hook-form"
 import { ErrorMessage } from '@hookform/error-message'
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useNavigate } from "@tanstack/react-router"
-import { useContactFeedback } from "../../../hooks/useContact"
-import Loader from "../../../components/loader"
-import { ContactFormType } from "../../../common/contact.type"
+import { ContactFormType } from "@/common/contact.type"
+import Loader from "@/components/loader"
+import { useContactFeedback } from "@/hooks/useContact"
+
 
 
 

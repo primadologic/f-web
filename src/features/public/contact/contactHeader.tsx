@@ -1,4 +1,5 @@
-import CustomHeader from "../../../components/header";
+import CustomHeader from "@/components/header";
+
 
 
 export default function ContactHeader() {

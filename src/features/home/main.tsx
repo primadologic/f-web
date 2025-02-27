@@ -1,7 +1,9 @@
-import FooterComponent from "../../components/footer";
-import NavbarComponent from "../../components/navbar";
+
+
 import HomeComponent from "./homeComponent";
-import "../../index.css"
+import "@/index.css"
+import FooterComponent from "@/components/footer";
+import NavbarComponent from "@/components/navbar";
 import HomeHeader from "./header";
 
 
