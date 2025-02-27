@@ -1,5 +1,5 @@
 
-import { JSX, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import PhoneInputWithCountry from 'react-phone-number-input/react-hook-form'
 import { CheckNumberType } from '../../common/home.types'
@@ -105,8 +105,6 @@ export default function HomeComponent() {
                 }
               });
 
-              console.log('API Key:', import.meta.env.VITE_API_KEY);
-
               if(response.data?.statusCode === 4004) {
                     setValidateMsg(`We don't have any reports on ${openNumber} involved in any fraudulent activities!`);
                     setIsDialogCloseNotFound(true)
@@ -202,7 +200,7 @@ export default function HomeComponent() {
                                             type="submit"
                                             disabled={verifyNumber.isPending}
                                             aria-label="validate number"
-                                            className={` w-full sm:w-[7rem] md:w-[7rem] md-767:w-[6rem] md-736:!w-full flex flex-row justify-center items-center sm:text-center text-center sm:!rounded-tr-md md:!rounded-tr-md sm:!rounded-br-md md:!rounded-br-md md-600:!rounded-s-md md-767:!rounded-s-md sm:text-lg sm:h-full lowercase sm:font-semibold sm:text-white  text-lg text-white bg-black py-3 font-semibold focus:ring-2 focus:ring-white md-667:!rounded-md md-540:rounded-md sm-430:rounded-md`}
+                                            className={` w-full sm:w-[7rem] text-base md:w-[7rem] md-767:w-[6rem] md-736:!w-full flex flex-row justify-center items-center sm:text-center text-center sm:!rounded-tr-md md:!rounded-tr-md sm:!rounded-br-md md:!rounded-br-md md-600:!rounded-s-md md-767:!rounded-s-md sm:text-lg sm:h-full lowercase sm:font-semibold sm:text-white text-white bg-black py-3 font-semibold focus:ring-2 focus:ring-white md-667:!rounded-md md-540:rounded-md sm-430:rounded-md`}
                                         >
                                            {verifyNumber.isPending ? (
                                                 <>

@@ -8,6 +8,7 @@ import "./index.css"
 import './App.css'
 import 'react-phone-number-input/style.css'
 import { Toaster } from 'sonner'
+import NotifyMeAlertDialog from './components/dialogs/notifyMeDialog'
 
 const queryClient = new QueryClient()
 
@@ -47,6 +48,9 @@ if (!rootElement.innerHTML) {
           style: {fontSize: '14px'}
         }}
       />
+      <>
+        <NotifyMeAlertDialog />
+      </>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>,
   )

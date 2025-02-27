@@ -1,7 +1,7 @@
 import { ErrorMessage } from "@hookform/error-message";
 import { Controller, useForm } from "react-hook-form";
 import PhoneInputWithCountry from 'react-phone-number-input/react-hook-form'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Cookies from "js-cookie";
 import { API_BASE_URL, API_KEY } from "../../lib/env_vars";
 import axios from "axios";
@@ -29,7 +29,7 @@ import { PlatformIDType, ReportFormType } from "../../common/report.type";
 
 export default function ReportComponent() {
 
-    const { register, reset, handleSubmit, trigger, control, formState: { errors, isSubmitted, isDirty }, setValue } = useForm<ReportFormType>({
+    const { register, reset, handleSubmit, trigger, control, formState: { errors }, setValue } = useForm<ReportFormType>({
         criteriaMode: 'all',
         defaultValues: {
             suspectNumber: '',
@@ -80,13 +80,6 @@ export default function ReportComponent() {
     };
 
 
-    // useEffect(() => {
-    //     if (isSubmitted) {
-    //         trigger('requestFiles')
-    //     };
-    // }, [files, trigger, isSubmitted])
-
-
     // API Calls
 
     const getPlatformID = useQuery({
@@ -108,95 +101,96 @@ export default function ReportComponent() {
 
 
     // Report a Number
-
+    
     const accessToken: string | undefined = Cookies.get('accessToken')
 
-    const createReport = async (newData: ReportFormType) => {
-        try {
-            const origin: string = 'Web'
-            const formData = new FormData();
-
-            // Append non-file fields
-            formData.append('suspectNumber', encrypt(newData.suspectNumber));
-            formData.append('platFormId', newData.platFormId);
-            formData.append('incidentDate', newData.incidentDate);
-            formData.append('description', encrypt(newData.description));
-
-            // Append files
-            newData.requestFiles.forEach(file => {
-              formData.append('requestFiles', file);
-            });
-            const response = await axios.post(`${API_BASE_URL}` + `/report?origin=${origin}`, formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    "X-API-KEY":   `${API_KEY}`,
-                    'Authorization': `Bearer ${accessToken}`
-                }
-           })
-
-            if(response.data?.statusCode === 200) {
-                toast.success(`${response?.data?.message}`)
-                setTimeout(() => {
-                    navigate({ to: '/' })
-                }, 4000)
-            };
-
-            if (response.data?.statusCode === 201) {
-                toast.success(`${response?.data?.message}`)
-                setTimeout(() => {
-                    
-                }, 2000)
-                setTimeout(() => {
-                    Cookies.remove('accessToken')
-                }, 1000)
-            }
-
-            return response.data
-
-        } catch (err) {
-            if (axios.isAxiosError(err)) {
-                const code = err.response?.data?.statusCode ?? null;
-                if (code === 409) {
-                    toast.info(`The phone number ${err.response?.data?.message} has been already been reported.`)
-                 };
-                 if (code === 400) {
-                    toast.error(`${err.response?.data?.message}`)
-                 };
-                 if (code === 401) {
-                    toast.error("You're unauthorized, please verify your phone number.")
-                    console.log("Error 401");
-                    reset()
-                    setFiles([])
-                    console.log("Error 401");
-                    setTimeout(() => {
-                        navigate({ to: '/' })
-                    }, 4000)
-                    
-                 };
-
-                 console.log("Error occurred while posting report:", err);
-             }
-        }
-    }
-
-
+   
     const reportMutation = useMutation({
         mutationKey: ['report'],
-        mutationFn: createReport,
-   
-        onSuccess: () => {
-            reset();
-            setFiles([]); 
+        mutationFn: async (newData: ReportFormType) => {
+            try {
+                const origin: string = 'Web';
+                const formData = new FormData();
 
-        },
+               // Encrypt fields before appending - use await here
+                const encryptedSuspectNumber = await encrypt(newData.suspectNumber);
+                const encryptedDescription = await encrypt(newData.description);
+
+                // Append non-file fields
+                formData.append('suspectNumber', encryptedSuspectNumber);
+                formData.append('platFormId', newData.platFormId);
+                formData.append('incidentDate', newData.incidentDate);
+                formData.append('description', encryptedDescription);
+    
+                // Append files
+                newData.requestFiles.forEach(file => {
+                    formData.append('requestFiles', file);
+                });
+    
+                console.log("Sending request to:", `${API_BASE_URL}/report?origin=${origin}`);
+                console.log("FormData entries:", Array.from(formData.entries()));
+    
+                const response = await axios.post(`${API_BASE_URL}/report?origin=${origin}`, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                        "X-API-KEY": `${API_KEY}`,
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+    
+                console.log("Response received:", response);
+    
+                if (response.data?.statusCode === 200) {
+                    toast.success(`${response?.data?.message}`);
+                    setTimeout(() => {
+                        navigate({ to: '/' });
+                    }, 3000);
+                }
+    
+                if (response.data?.statusCode === 201) {
+                    toast.success(`${response?.data?.message}`);
+                    setTimeout(() => {
+                        Cookies.remove('accessToken');
+                    }, 1000);
+                }
+    
+                return response.data;
+    
+            } catch (err) {
+                if (axios.isAxiosError(err)) {
+                    const code = err.response?.data?.statusCode ?? null;
+                    
+                    if (code === 409) {
+                        toast.info(`The phone number ${err.response?.data?.message} has already been reported.`);
+                    } 
+                    if (code === 400) {
+                        toast.error(`${err.response?.data?.message}`);
+                    } 
+                    if (code === 401) {
+                        toast.error("You're unauthorized, please verify your phone number.");
+                        console.log("Error 401");
+                        reset();
+                        setFiles([]);
+                        setTimeout(() => {
+                            navigate({ to: '/' });
+                        }, 4000);
+                    }
+    
+                    // console.log("Error occurred while posting report:", err);
+                }
+                throw err; // Ensure mutation handles errors properly
+            }
+        }
     });
-
-
-
+    
     const onSubmit = async (data: ReportFormType) => {
-        console.log(data);
-        reportMutation.mutateAsync(data);
-        
+        // console.log("Submitting:", data);
+        try {
+            const result = reportMutation.mutateAsync(data);
+            console.log("Mutation result:", result);
+        } catch (error) {
+            console.error("Mutation error:", error);
+        }
     };
 
 
@@ -204,7 +198,7 @@ export default function ReportComponent() {
 
     return (
         <>
-             <section className="bg-custom-primary-400 w-full px-5">
+            <section className="bg-custom-primary-400 w-full px-5">
                 <form onSubmit={handleSubmit(onSubmit)} action="#" className='py-12 flex flex-col justify-center items-center'>
                     <div className="flex flex-row justify-center gap-x-32 font-medium items-start md-768:justify-start md-768:px-28 md-912:gap-x-20 md-820:gap-x-20 sm-425:!px-12 sm-425:flex sm-425:flex-col sm-425:gap-y-5 sm-430:!px-0 md-540:flex md-540:flex-col md-540:justify-center md-540:items-center md-540:!px-0 md-540:gap-y-5 md-768:flex md-768:flex-col md-768:gap-y-5  md-768:items-center md-768:!w-full">
                         <div className="flex flex-col justify-around w-[30vw] gap-5 sm-425:w-full md-768:w-full md-540:w-full ">
@@ -400,7 +394,7 @@ export default function ReportComponent() {
                                     disabled={reportMutation.isPending}
                                     aria-label="report form button"
                                     className={`${reportMutation.isPending ? 'cursor-not-allowed' : 'cursor-pointer '} 
-                                        bg-black w-[13rem] text-primary-foreground flex flex-row justify-center items-center px-3 py-3 rounded-md md-768:w-full  sm-425:!w-full md-540:!w-full  focus:ring-2 focus:ring-white 
+                                        bg-black w-[13rem] text-primary-foreground text-base flex flex-row justify-center items-center px-3 py-3 rounded-md md-768:w-full  sm-425:!w-full md-540:!w-full  focus:ring-2 focus:ring-white 
                                     `}
                                 >
                                     {reportMutation.isPending ? (

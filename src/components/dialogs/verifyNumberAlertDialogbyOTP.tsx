@@ -1,7 +1,6 @@
 import { Controller, useForm } from "react-hook-form"
 import {
     AlertDialog,
-    AlertDialogAction,
     AlertDialogCancel,
     AlertDialogContent,
     AlertDialogDescription,
@@ -162,7 +161,7 @@ export default function VerifyNumbyOTPOCodeDialog() {
                                             </div>
                                         ): (
                                             showResendButton && (
-                                                <div className="text-sm sm:flex sm:flex-row flex flex-row flex-wrap gap-2 flex flex-row gap-1 mx-2">
+                                                <div className="text-sm sm:flex sm:flex-row flex flex-row flex-wrap gap-1 mx-2">
                                                     <p className="font-medium ">Didn&apos;t recieve verification code? </p>
                                                     <button onClick={handleResendCode} className="underline text-blue-500 font-semibold">Resend Code</button>
                                                 </div>

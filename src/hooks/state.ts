@@ -5,6 +5,12 @@ interface DialogState {
     setOpen: (open: boolean) => void;
   }
 
+
+interface NotifyMeDialogState {
+  notifyMeIsOpen: boolean;
+  setNotifyMeIsOpen: (isOpen: boolean) => void;
+}
+
 interface VerifyDialogState {
     VerifyNumIsOpen: boolean;
     setVerifyNumIsOpen: (open: boolean) => void;
@@ -51,9 +57,9 @@ interface VerifyNumberToastMsgState {
 }
 
 
-export const useNotifyMeCloseStore = create<DialogState>((set) => ({
-    isOpen: false,
-    setOpen: (open: boolean) => set({isOpen: open})
+export const useNotifyMeCloseStore = create<NotifyMeDialogState>((set) => ({
+    notifyMeIsOpen: false,
+    setNotifyMeIsOpen: (open: boolean) => set({notifyMeIsOpen: open})
 }))
 
 
