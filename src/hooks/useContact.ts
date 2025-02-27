@@ -1,8 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "sonner"
-import { API_BASE_URL, API_KEY } from "../lib/env_vars";
-import { ContactFormType } from "../common/contact.type";
+import { API_BASE_URL, API_KEY } from "@/lib/env_vars";
+import { ContactFormType } from "@/common/contact.type";
 
 
 

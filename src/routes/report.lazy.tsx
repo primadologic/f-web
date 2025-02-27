@@ -1,8 +1,9 @@
 import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
-import ReportMainComponent from '../features/report/main'
+
 import { useEffect } from 'react';
 import Cookies from "js-cookie";
 import React from 'react';
+import ReportMainComponent from '@/features/report/main';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;

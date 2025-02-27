@@ -1,15 +1,9 @@
 
-// import { Link } from "@tanstack/react-router";
-// import { useEffect, useState } from "react";
+
 
 
 export default function AboutComponent() {
-    // const [animationTriggered, setAnimationTriggered] = useState(false);
-    
-    // useEffect(() => {
-    //     setAnimationTriggered(true);
-    // }, []);
-
+ 
     return (
 
         <div className="bg-custom-primary-400 text-primary-foreground sm:w-full sm:flex sm:justify-center sm:items-center w-full justify-center items-center">
