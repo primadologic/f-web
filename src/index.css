@@ -169,3 +169,7 @@ body {
   caret-color: auto;
 }
 
+.toast-error {
+  @apply bg-red-700 text-primary-foreground
+}
+

@@ -5,6 +5,7 @@ import { Link } from '@tanstack/react-router';
 // Images
 import logo from '/assets/fraudwall-logo2.png'
 import { MenuIcon, XIcon } from "lucide-react";
+import { useNotifyMeCloseStore } from '../hooks/modalState';
 
 
 
@@ -12,6 +13,8 @@ import { MenuIcon, XIcon } from "lucide-react";
 export default function NavbarComponent() {
 
     const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
+
+    const setNotifyMeIsOpen = useNotifyMeCloseStore((state) => state.setNotifyMeIsOpen)
 
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen)
@@ -33,6 +36,7 @@ export default function NavbarComponent() {
                              src={logo}
                              alt='logo'
                              className='object-fill sm:w-[10rem] w-[9rem]'
+                             loading="lazy"
                         />
                     </div>      
                 </Link>
@@ -45,7 +49,7 @@ export default function NavbarComponent() {
                         <Link to="/about" activeProps={{ className: " font-bold text-lg text-custom-primary-500" }} className="focus:text-custom-primary-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">About us</li>
                         </Link>
-                        <button  className="text-lg font-semibold px-2 py-2 focus:text-custom-primary-500   hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                        <button onClick={() => setNotifyMeIsOpen(true)}  className="text-lg font-semibold px-2 py-2 focus:text-custom-primary-500   hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li>Notify me</li>
                         </button>
                         <Link to="/faqs" activeProps={{ className: " font-bold text-custom-primary-500" }} className=" focus:text-custom-primary-500  text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
@@ -80,6 +84,7 @@ export default function NavbarComponent() {
                                          src={logo}
                                          alt='logo'
                                          className='object-fill sm:w-[10rem] w-[9rem]'
+                                         loading="lazy"
                                     />
                              </div>      
                             </Link>
@@ -96,7 +101,7 @@ export default function NavbarComponent() {
                         <Link to="/about" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li className="">About us</li>
                         </Link>
-                        <button  className="text-lg font-medium px-2 py-2 focus:text-custom-primary-500   hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                        <button onClick={() => setNotifyMeIsOpen(true)}    className="text-lg font-medium px-2 py-2 focus:text-custom-primary-500   hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
                             <li>Notify me</li>
                         </button>
                         <Link to="/faqs" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
