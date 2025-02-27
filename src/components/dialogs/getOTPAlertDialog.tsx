@@ -5,7 +5,6 @@ import { ErrorMessage } from "@hookform/error-message";
 import { OTPType } from "../../common/home.types";
 import {
     AlertDialog,
-    AlertDialogAction,
     AlertDialogCancel,
     AlertDialogContent,
     AlertDialogDescription,
@@ -14,30 +13,56 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
   } from "../ui/alert-dialog"
+import { useGetOTPCode } from "../../hooks/useGetOTPCode";
+import { useReporterNumStore } from "../../hooks/modalState";
+import { useEffect } from "react";
+import { useGetOTPCloseStore } from "../../hooks/state";
+import { Button } from "../ui/button";
+import Loader from "../loader";
 
 
 
-  
+
 
 export default function GetOTPAlertDialog() {
 
-    const { formState: {errors,}, control } = useForm<OTPType>({
+    const { reset, handleSubmit, formState: { errors }, control } = useForm<OTPType>({
         criteriaMode: 'all',
         defaultValues: {
             reporterNumber: ''
         }
     })
 
+
+    // API Hook(s)
+    const getOTPCode = useGetOTPCode();
+
+
+    const { isOpen, setOpen} = useGetOTPCloseStore()
+    const setReporterNum = useReporterNumStore((state) => state.setReportNum)
+
+    const onSubmit = async (data: OTPType) => {
+        setReporterNum(data.reporterNumber)
+        getOTPCode.mutateAsync(data.reporterNumber)
+    }
+    
+    useEffect(() => {
+        if (getOTPCode.isSuccess) {
+            reset()
+        }
+    },[getOTPCode.isSuccess, reset])
+  
+
     return (
         <div className="w-full sm:w-full md-736:w-[80%]">
             <div className="">
-               <AlertDialog>
+               <AlertDialog  open={isOpen} onOpenChange={setOpen}>
                    <AlertDialogTrigger 
-                       className="border-[#eff4f8] border-2 bg-custom-periwinkle sm:text-lg text-lg font-semibold text-zinc-900 w-full px-5 py-3 rounded-md hover:font-semibold hover:transition-all hover:bg-[#dbe0e3] hover:delay-150 hover:ease-in-out hover:duration-150 focus:bg-[#e2eaf1] focus:text-zinc-800 "
+                       className="border-[#eff4f8] w-full border-2 bg-custom-periwinkle sm:text-lg text-lg font-semibold text-zinc-900  px-5 py-3 rounded-md hover:transition-all hover:bg-[#dbe0e3] hover:delay-150 hover:ease-in-out hover:duration-150 focus:bg-[#e2eaf1] focus:text-zinc-800 "
                    >
                        Report a number
                    </AlertDialogTrigger>
-                   <AlertDialogContent>
+                   <AlertDialogContent className="rounded-md lg:max-w-[30rem] sm:max-w-[27rem] max-w-[90%] flex flex-col gap-y-5 ">
                        <AlertDialogHeader className="w-full flex !justify-start !items-start !space-y-1">
                            <AlertDialogTitle className="font-semibold text-base">
                                Get OTP Code
@@ -46,7 +71,7 @@ export default function GetOTPAlertDialog() {
                                Verify your phone number to report a fraudulent number
                            </AlertDialogDescription>
                        </AlertDialogHeader>
-                        <form  className="flex flex-col gap-y-5 ">
+                        <form onSubmit={handleSubmit(onSubmit)}  className="flex flex-col gap-y-5 ">
                             <div className="w-full flex flex-col gap-y-2">
                                 <label htmlFor="phoneNumber" className="text-base font-medium">Phone Number</label>
                                 <PhoneInputWithCountry 
@@ -77,21 +102,25 @@ export default function GetOTPAlertDialog() {
                                     ))
                                 }
                             />
-                            <AlertDialogFooter className="flex justify-end items-end">
+                            <AlertDialogFooter className="flex flex-row gap-3 justify-end items-end">
                                 <AlertDialogCancel>Cancel</AlertDialogCancel>
-                                <AlertDialogAction asChild>
-                                    <button 
-                                        type="submit"
-                                        // disabled={getOTP.isPending}
-                                        aria-label="get otp code form button"
-                                        className={` w-[8rem] flex px-3 py-3  justify-center rounded-md text-lg bg-black   font-semibold text-white focus:ring-2 focus:ring-white   right-[0rem] sm-425:p-3  `}
-                                    >
-                                        Get Code
-                                    </button>
-                                </AlertDialogAction>
+                                
+                                <Button 
+                                    type="submit"
+                                    disabled={getOTPCode.isPending}
+                                    aria-label="get otp code form button"
+                                    className={` ${ getOTPCode.isPending ? 'cursor-not-allowed' : 'cursor-pointer'} flex flex-row justify-center items-center `}
+                                >
+                                   {getOTPCode.isPending ? (
+                                        <>
+                                            <Loader />
+                                        </>
+                                   ): (
+                                        <span>Get Code</span>
+                                   )}
+                                </Button>
+                               
                             </AlertDialogFooter>
-
-                        
                         </form>
                    </AlertDialogContent>
                </AlertDialog>
