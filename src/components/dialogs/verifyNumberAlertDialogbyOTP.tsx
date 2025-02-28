@@ -178,7 +178,7 @@ export default function VerifyNumbyOTPOCodeDialog() {
                                         variant={'default'}
                                         disabled={verifyNumber.isPending}
                                         aria-label="verify number"
-                                        className={`${verifyNumber.isPending ? 'cursor-not-allowed' : 'cursor-pointer'} w-[3rem] flex flex-row justify-center items-center `}>
+                                        className={`${verifyNumber.isPending ? 'cursor-not-allowed' : 'cursor-pointer'} w-[8rem] flex flex-row justify-center items-center `}>
                                         {verifyNumber.isPending ? (
                                             <>
                                                 <Loader />

@@ -109,7 +109,7 @@ export default function GetOTPAlertDialog() {
                                     type="submit"
                                     disabled={getOTPCode.isPending}
                                     aria-label="get otp code form button"
-                                    className={` ${ getOTPCode.isPending ? 'cursor-not-allowed' : 'cursor-pointer'} w-[3rem] flex flex-row justify-center items-center `}
+                                    className={` ${ getOTPCode.isPending ? 'cursor-not-allowed' : 'cursor-pointer'} w-[7rem] flex flex-row justify-center items-center `}
                                 >
                                    {getOTPCode.isPending ? (
                                         <>
