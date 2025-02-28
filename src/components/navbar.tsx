@@ -43,21 +43,28 @@ export default function NavbarComponent() {
                
                 <div className="text-black text-xl hidden sm:hidden  md-767:hidden lg:block">
                     <ul className="flex gap-10 items-center xl:gap-10 sm:gap-5">
-                        <Link to="/" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li className="">Home</li> 
+                    <li className=""><Link to="/" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                            Home
                         </Link>
-                        <Link to="/about" activeProps={{ className: " font-bold text-lg text-custom-primary-500" }} className="focus:text-custom-primary-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li className="">About us</li>
+                        </li>
+                        <li><Link to="/about" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                           About us
                         </Link>
-                        <button onClick={() => setNotifyMeIsOpen(true)}  className="text-lg font-semibold px-2 py-2 focus:text-custom-primary-500   hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li>Notify me</li>
+                        </li>
+
+                        <li>
+                        <button onClick={() => setNotifyMeIsOpen(true)}    className="text-lg font-medium px-2 py-2 focus:text-custom-primary-500   hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                            Notify me
                         </button>
-                        <Link to="/faqs" activeProps={{ className: " font-bold text-custom-primary-500" }} className=" focus:text-custom-primary-500  text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li className="">FAQs</li>
+                        </li>
+                        <li><Link to="/faqs" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                           FAQs
                         </Link>
-                        <Link to="/contact" activeProps={{ className: " font-bold text-custom-primary-500" }} className=" focus:text-custom-primary-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li className="">Contact us</li>
+                        </li>
+                        <li><Link to="/contact" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                            Contact us
                         </Link>
+                        </li>
                     </ul>
                   
                 </div>  
@@ -95,21 +102,28 @@ export default function NavbarComponent() {
                     )}
                   
                     <ul className="flex flex-col gap-3 justify-start text-start items-start xl:gap-10 sm:gap-5 mt-10">
-                        <Link to="/" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li className="">Home</li> 
+                        <li className=""><Link to="/" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                            Home
                         </Link>
-                        <Link to="/about" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li className="">About us</li>
+                        </li>
+                        <li><Link to="/about" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                           About us
                         </Link>
+                        </li>
+
+                        <li>
                         <button onClick={() => setNotifyMeIsOpen(true)}    className="text-lg font-medium px-2 py-2 focus:text-custom-primary-500   hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li>Notify me</li>
+                            Notify me
                         </button>
-                        <Link to="/faqs" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li className="">FAQs</li>
+                        </li>
+                        <li><Link to="/faqs" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                           FAQs
                         </Link>
-                        <Link to="/contact" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
-                            <li className="">Contact us</li>
+                        </li>
+                        <li><Link to="/contact" activeProps={{ className: " font-bold text-custom-primary-500" }} className="focus:text-cos-brown-500 text-lg font-semibold px-2 py-2 hover:bg-custom-active-gray hover:bg-opacity-50 hover:rounded-md">
+                            Contact us
                         </Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
