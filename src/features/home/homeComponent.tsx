@@ -169,9 +169,9 @@ export default function HomeComponent() {
         <div className="flex flex-col">
             <section className="bg-custom-primary-400 flex flex-col justify-center items-center py-7 px-5">
                 <div className="space-y-4 " >
-                    <h2 className="sm:text-base sm:text-white sm:font-medium sm:text-center text-center text-white text-base font-medium">
+                    <h1 className="sm:text-base sm:text-white sm:font-medium sm:text-center text-center text-white text-base font-medium">
                         Verify if a number is fraudulent
-                    </h2>
+                    </h1>
                     <form onSubmit={handleSubmit(onSubmit)} className="sm:w-full flex flex-col gap-y-6 w-[100vw] justify-center items-center">
                         <div className="flex flex-col justify-center items-center gap-y-5 w-full sm:flex-row sm:justify-center md-736:!flex-col sm:items-center sm:gap-y-2">
                             <div className="w-full flex flex-col gap-y-2 justify-center items-center">
@@ -247,6 +247,7 @@ export default function HomeComponent() {
                                 src={ntoboa}
                                 alt="Fraudwall Logo"
                                 className="object-cover sm:w-[8rem] w-[8rem]"
+                                loading="lazy"
                             />
                         </div>    
                         <div className="">

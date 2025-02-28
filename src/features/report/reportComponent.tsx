@@ -141,14 +141,18 @@ export default function ReportComponent() {
                 console.log("Response received:", response);
     
                 if (response.data?.statusCode === 200) {
-                    toast.success(`${response?.data?.message}`);
+                    toast.success(`${response?.data?.message}`, {
+                        duration: 4000
+                    });
                     setTimeout(() => {
                         navigate({ to: '/' });
                     }, 3000);
                 }
     
                 if (response.data?.statusCode === 201) {
-                    toast.success(`${response?.data?.message}`);
+                    toast.success(`${response?.data?.message}`, {
+                        duration: 4000
+                    });
                     setTimeout(() => {
                         Cookies.remove('accessToken');
                     }, 1000);
@@ -161,10 +165,14 @@ export default function ReportComponent() {
                     const code = err.response?.data?.statusCode ?? null;
                     
                     if (code === 409) {
-                        toast.info(`The phone number ${err.response?.data?.message} has already been reported.`);
+                        toast.info(`The phone number ${err.response?.data?.message} has already been reported.`, {
+                            duration: 5000
+                        });
                     } 
                     if (code === 400) {
-                        toast.error(`${err.response?.data?.message}`);
+                        toast.error(`${err.response?.data?.message}`, {
+                            duration: 5000
+                        });
                     } 
                     if (code === 401) {
                         toast.error("You're unauthorized, please verify your phone number.");
@@ -344,7 +352,7 @@ export default function ReportComponent() {
                         </div>
                            
 
-                        <div className="mb-5  flex flex-col justify-between items-start w-[40%] h-full md-820:w-full md-768:w-full">
+                        <div className="mb-5  flex flex-col justify-between items-start w-[40%] h-full md-820:w-full md-768:w-full w-full">
 
                             <div className="flex flex-col gap-3">  
                                 <div className="flex flex-row gap-2">
@@ -368,16 +376,16 @@ export default function ReportComponent() {
                                                 {errors.requestFiles && (
                                                     <span className="text-sm font-medium text-primary-foreground">{errors.requestFiles.message}</span>
                                                 )}
-                                                <aside className="flex flex-col gap-2">
-                                                    <ul className="space-y-3 list-disc">
+                                                <aside className="flex flex-col gap-2 w-[15rem] ">
+                                                    <ul className="space-y-3 list-disc ">
                                                     {files.map((file) => (
                                                         <div key={file.name} className="flex flex-row gap-2">
-                                                        <li className="bg-white list-disc max-w-max text-black text-base font-medium py-2 px-3 rounded-xl flex items-center justify-between">
-                                                            {file.name}
-                                                        </li>
-                                                        <button onClick={() => removeFile(file.name)} className="ml-2 text-red-500">
-                                                            <X className="w-6 h-6 bg-white text-black rounded-full hover:bg-red-500 focus:bg-red-500 hover:text-white hover:font-bold transition-all duration-300 hover:scale-125 hover:translate-y-1" />
-                                                        </button>
+                                                            <li className="bg-white w-full px-3 line-clamp-1 text-black text-base font-medium py-1 rounded-xl flex items-center justify-between">
+                                                                {file.name}
+                                                            </li>
+                                                            <button onClick={() => removeFile(file.name)} className="ml-2 text-red-500">
+                                                                <X className="w-6 h-6 bg-white text-black rounded-full hover:bg-red-500 focus:bg-red-500 hover:text-white hover:font-bold transition-all duration-300 hover:scale-125 hover:translate-y-1" />
+                                                            </button>
                                                         </div>
                                                     ))}
                                                     </ul>
