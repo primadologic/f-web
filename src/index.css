@@ -141,6 +141,8 @@ body {
   padding: 20px;
   text-align: center;
   cursor: pointer;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .dropzone:hover {

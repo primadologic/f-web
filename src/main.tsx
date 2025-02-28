@@ -9,6 +9,7 @@ import '@/App.css'
 import 'react-phone-number-input/style.css'
 import { Toaster } from 'sonner'
 import NotifyMeAlertDialog from './components/dialogs/notifyMeDialog'
+import { HelmetProvider } from 'react-helmet-async'
 
 
 const queryClient = new QueryClient()
@@ -38,21 +39,23 @@ const rootElement = document.getElementById('root')!
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <Toaster
-        richColors
-        closeButton={true}
-        position="top-center"
-        duration={3500} 
-        toastOptions={{
-          style: {fontSize: '14px'}
-        }}
-      />
-      <>
-        <NotifyMeAlertDialog />
-      </>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>,
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <Toaster
+          richColors
+          closeButton={true}
+          position="top-center"
+          duration={3500} 
+          toastOptions={{
+            style: {fontSize: '14px'}
+          }}
+        />
+        <>
+          <NotifyMeAlertDialog />
+        </>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>,
+    </HelmetProvider>
   )
 }

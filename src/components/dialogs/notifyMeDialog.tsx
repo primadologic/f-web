@@ -140,7 +140,7 @@ export default function NotifyMeAlertDialog() {
                                         variant={'default'}
                                         disabled={notifyMeMutation.isPending}
                                         aria-label="notify me form button"
-                                        className={`${notifyMeMutation.isPending ? 'cursor-not-allowed ' : 'cursor-pointer'} flex flex-row justify-center items-center`}
+                                        className={`${notifyMeMutation.isPending ? 'cursor-not-allowed ' : 'cursor-pointer'} w-[7rem] flex flex-row justify-center items-center`}
                                     >
                                         {notifyMeMutation.isPending ? (
                                             <>
