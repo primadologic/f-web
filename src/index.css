@@ -117,6 +117,13 @@ body {
   font-optical-sizing: auto;
 }
 
+/* Add this to your global CSS */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
 
 @layer base {
   * {

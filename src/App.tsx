@@ -11,12 +11,13 @@ function App() {
     
    <HelmetProvider context={helmetContext}>
       <div className="">
-        <Toaster
-            closeButton={true}
-            position="top-center"
-            duration={3500} 
-            toastOptions={{
-              style: {fontSize: '14px'}
+      <Toaster
+          richColors
+          closeButton={true}
+          position="top-center"
+          duration={3500} 
+          toastOptions={{
+            style: {fontSize: '14px'}
           }}
         />
         <HomeMainComponent />
