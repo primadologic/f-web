@@ -242,7 +242,7 @@ export default function HomeComponent() {
                 <div className="sm:w-[80vw] sm:max-w-[80vw] sm:flex sm:flex-col sm:justify-center sm:items-center  sm:gap-8 lg:w-full lg:px-10 xl:w-[80vw] md:w-full w-full flex flex-col items-center justify-center px-5 gap-y-10 gap-x-10">
                     <h2 className="text-center !font-bold text-2xl text-custom-dark-gray-active">Trusted by</h2>
                     <div className="sm:w-[80vw] lg:w-full lg:px-10 xl:w-[80vw] sm:flex sm:flex-row sm:justify-center sm:items-center sm:gap-x-20 sm:gap-y-10 md:w-full flex flex-wrap gap-x-5 gap-y-10 justify-center items-center">
-                        <div className="">
+                        <div className=""> 
                             <img
                                 src={ntoboa}
                                 alt="Fraudwall Logo"
@@ -283,7 +283,7 @@ export default function HomeComponent() {
                 <div className="">
                      {/* status 200 */}
                     <Dialog open={isDialogCloseNotFound} onOpenChange={setIsDialogCloseNotFound}>
-                        <DialogTrigger className="hidden"></DialogTrigger>
+                        <DialogTrigger className="hidden sr-only"></DialogTrigger>
                         <DialogContent className='bg-[#00A341] rounded-md lg:max-w-[32rem] sm:max-w-[32rem] max-w-[93%] flex flex-col justify-center items-center border-[#00A341]'>
                             <div className="flex flex-col justify-center items-center px-8 gap-10">
                                 <div className="flex flex-col justify-between items-center gap-y-3">
@@ -314,7 +314,7 @@ export default function HomeComponent() {
                 <div className="">
                     {/* status 404 */}
                     <Dialog open={isDialogCloseConfirmed} onOpenChange={setIsDialogCloseConfirmed}>
-                        <DialogTrigger aria-label='Number is fraudulent dialog' className="hidden"></DialogTrigger>
+                        <DialogTrigger aria-label='Number is fraudulent dialog' className="hidden sr-only"></DialogTrigger>
                         <DialogContent className='bg-[#EB0000] rounded-md lg:max-w-[32rem] sm:max-w-[32rem] max-w-[93%] flex flex-col justify-center items-center border-[#EB0000]'>
                             <div className="flex flex-col justify-center items-center px-7 gap-10">
                                 <div className="flex flex-col justify-between items-center ">
@@ -359,7 +359,7 @@ export default function HomeComponent() {
 
                 <div className="">
                         <Dialog open={isDialogCloseWarning} onOpenChange={setIsDialogCloseWarning}>
-                            <DialogTrigger className="hidden">Open Dialog</DialogTrigger> 
+                            <DialogTrigger className="hidden sr-only">Open Dialog</DialogTrigger> 
                             <DialogContent className="rounded-md bg-[#E9DF00] lg:max-w-[32rem] sm:max-w-[32rem] max-w-[93%] flex flex-col justify-center items-center ">
                                 <div className="flex flex-col justify-center items-center px-8 gap-2">
                                     <div className="flex flex-col justify-between items-center gap-y-3">

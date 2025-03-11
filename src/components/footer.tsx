@@ -15,8 +15,8 @@ export default function FooterComponent() {
 
     return (
 
-        <div className="bg-custom-footer-bg flex sm:flex-row justify-center items-center px-5 py-10">
-            <div className="md:w-full md:max-w-full xl:w-[84vw] xl:max-w-[84vw] lg:w-full lg:px-10 w-full space-y-5 px-2">
+        <div className="flex sm:flex-row justify-center items-center px-5 py-5 w-full">
+            <div className="md:w-full xl:w-[84vw] xl:max-w-[84vw] lg:w-full lg:px-10 w-full space-y-5 px-2">
                 <div className="">
                     <StatisticsComponent />
                 </div>
