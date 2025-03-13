@@ -157,7 +157,7 @@ export default function VerifyNumbyOTPOCodeDialog() {
                                         {timeLeft > 0 ? (
                                             <div className="space-x-1 flex flex-row gap-1">
                                                 <p className="font-medium text-sm">Didn&apos;t recieve verification code? {' '}  </p>
-                                                <p className="font-semibold">{timeLeft === 60 ? '1:00' : `00:${timeLeft < 10 ? `0${timeLeft}` : timeLeft}`}</p>
+                                                <p className="font-semibold">{timeLeft === 60 ? '(59)' : `(${timeLeft < 10 ? `0${timeLeft}` : timeLeft})`}</p>
                                             </div>
                                         ): (
                                             showResendButton && (
