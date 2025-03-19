@@ -12,7 +12,7 @@ export const useContactFeedback = () => {
     const useContact = useMutation({
         mutationKey: ['contact'],
         mutationFn: async (newContactData: ContactFormType) => {
-            const response = await axios.post(`${API_BASE_URL}/feedback`, newContactData, {
+            const response = await axios.post(`${API_BASE_URL}/api/feedback`, newContactData, {
                 headers: {
                     "Content-Type": "application/json",
                     'x-api-key': `${API_KEY}`

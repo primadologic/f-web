@@ -15,6 +15,12 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    cors: {
+      // the origin you will be accessing via browser
+      origin: "https://dev-api.fraudwall.ai/api",
+    },
+  },
 })
 
 

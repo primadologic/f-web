@@ -17,7 +17,7 @@ export const useGetOTPCode = () => {
     const getOTP = useMutation({
         mutationKey: ['getOTP'],
         mutationFn: async (reporterNumber: string) => {
-            const response = await axios.get(`${API_BASE_URL}` + `/otp/${reporterNumber}`, 
+            const response = await axios.get(`${API_BASE_URL}/api/otp/${reporterNumber}`, 
             {
                 headers: {
                     'Content-Type': 'application/json',
