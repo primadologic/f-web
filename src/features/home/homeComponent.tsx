@@ -98,7 +98,7 @@ export default function HomeComponent() {
         mutationFn: async (data: CheckNumberType) => {
             const origin: string = 'Web';
            
-              const response = await axios.get(`${API_BASE_URL}` + `/fraud-number/validate/${data.phoneNumber}?origin=${origin}`, {
+              const response = await axios.get(`${API_BASE_URL}/api/fraud-number/validate/${data.phoneNumber}?origin=${origin}`, {
                 headers: {
                   'Content-Type': 'application/json',
                   'x-api-key': `${API_KEY}`

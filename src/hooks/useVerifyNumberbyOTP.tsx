@@ -23,7 +23,7 @@ export const useVerifyNumberbyOTPCode = () => {
     const verifyNumber = useMutation({
         mutationKey: ['verifyNumber'],
         mutationFn: async (data: VerifyNumberType) => {
-            const response = await axios.post(`${API_BASE_URL}` + '/verify/otp', data,
+            const response = await axios.post(`${API_BASE_URL}/api/verify/otp`, data,
             {
                 headers: {
                     'Content-Type': 'application/json',
