@@ -130,7 +130,7 @@ export default function ReportComponent() {
                 // console.log("Sending request to:", `${API_BASE_URL}/report?origin=${origin}`);
                 // console.log("FormData entries:", Array.from(formData.entries()));
     
-                const response = await axios.post(`${API_BASE_URL}/report?origin=${origin}`, formData, {
+                const response = await axios.post(`${API_BASE_URL}/api/report?origin=${origin}`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                         "X-API-KEY": `${API_KEY}`,

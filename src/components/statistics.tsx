@@ -13,7 +13,7 @@ export default function StatisticsComponent() {
     const getStats = useQuery({
         queryKey: ['getStats'],
         queryFn: async () => {
-            const response = await axios.get(`${API_BASE_URL}` + '/report/fraud-numbers/statistics', {
+            const response = await axios.get(`${API_BASE_URL}/api/report/fraud-numbers/statistics`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'x-api-key': `${API_KEY}`
